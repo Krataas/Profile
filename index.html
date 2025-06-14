@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dũng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Greeting Overlay -->
+    <div id="greeting-overlay" class="greeting-overlay">
+        <div class="greeting-content">
+            <h1>Welcome!</h1>
+            <button id="enter-btn" class="enter-btn">Bấm vào để tiếp tục</button>
+        </div>
+    </div>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay muted loop id="myVideo">
+            <source src="assets/videos/background.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Profile Section -->
+        <section class="profile-section glass" data-aos="fade-up">
+            <div class="avatar-container">
+                <img src="assets/images/avatar.gif" alt="Profile Avatar" class="avatar">
+                <div class="status-indicator online"></div>
+            </div>
+            <div class="profile-info">
+                <h1 class="typing-text">
+                    <img src="assets/images/white-cat.gif" alt="Cute Cat" class="cat-gif" />
+                </h1>
+                <p class="motto">I like the moon... Would you listen to my favorite songs?</p>
+
+                <div class="tags-container">
+                    <span class="tag uiux"><i class="fas fa-laptop-code"></i> Newbie Coder</span>
+                    <span class="tag gamer"><i class="fas fa-gamepad"></i> Gamer</span>
+                    <span class="tag music"><i class="fas fa-music"></i> Music Lover</span>
+                    <span class="tag anime"><i class="fas fa-film"></i> Anime Fan</span>
+                    <span class="tag photo"><i class="fas fa-camera"></i> Photographer</span>
+                    <span class="tag artist"><i class="fas fa-pencil-alt"></i> Artist</span>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Introduction -->
+        <section class="personal-intro">
+            <div class="gallery">
+                <img src="assets/images/gif1.gif" class="gallery-item" data-id="1" alt="About Me">
+                <img src="assets/images/gif2.gif" class="gallery-item" data-id="2" alt="Likes & Dislikes">
+                <img src="assets/images/gif3.gif" class="gallery-item" data-id="3" alt="Interests">
+                <img src="assets/images/gif4.gif" class="gallery-item" data-id="4" alt="Social Media">
+            </div>
+
+            <!-- Info Modals -->
+            <div class="modal-container" id="modal-1">
+                <div class="modal-content">
+                    <button class="nav-btn prev" onclick="navigateModal(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next" onclick="navigateModal(1)"><i class="fas fa-chevron-right"></i></button>
+                    <img src="assets/images/gif1.gif" alt="About Me" class="modal-image">
+                    <h2>✧ About Me ✧</h2>
+                    <p>✦ Nguyễn Trung Dũng (NuocCam)</p>
+                    <p>✦ June 18 2007, auto/bot</p>
+                    <p>✦ Hai Phong, VietNam</p>
+                    <p>✦ Coder, Configurer, Listener</p>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-2">
+                <div class="modal-content">
+                    <button class="nav-btn prev" onclick="navigateModal(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next" onclick="navigateModal(1)"><i class="fas fa-chevron-right"></i></button>
+                    <img src="assets/images/gif2.gif" alt="Likes & Dislikes" class="modal-image">
+                    <h2>✧ Likes & Dislikes ✧</h2>
+                    <p><strong>♥ Likes:</strong></p>
+                    <p>✦ ballisong, music, girl,</p>
+                    <p>✦ sleep, silence, math, gaming</p>
+                    <p><strong>✗ Dislikes:</strong></p>
+                    <p>✦ loud noises, toxic, liers,</p>
+                    <p>✦ job employment 🐧, ...</p>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-3">
+                <div class="modal-content">
+                    <button class="nav-btn prev" onclick="navigateModal(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next" onclick="navigateModal(1)"><i class="fas fa-chevron-right"></i></button>
+                    <img src="assets/images/gif3.gif" alt="Interests" class="modal-image">
+                    <h2>✧ Interests ✧</h2>
+                    <p><strong>🎮 Games:</strong></p>
+                    <p>✦ <i class="fas fa-crosshairs"></i> Valorant</p>
+                    <p>✦ <i class="fas fa-wind"></i> Minecraft</p>
+                    <p>✦ <i class="fas fa-feather-alt"></i> League Of Legends</p>
+                    <p><strong>📚 Wishlist:</strong></p>
+                    <p>✦ Ballisong, airpods, ...</p>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-4">
+                <div class="modal-content">
+                    <button class="nav-btn prev" onclick="navigateModal(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next" onclick="navigateModal(1)"><i class="fas fa-chevron-right"></i></button>
+                    <img src="assets/images/gif4.gif" alt="Social Media" class="modal-image">
+                    <h2>✧ Social Media ✧</h2>
+                    <div class="social-icons-container">
+                        <a href="https://www.instagram.com/bibo11346/" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/nguyentrungdung11346/" class="social-icon locket" title="Locket"><i class="fas fa-heart"></i></a>
+                        <a href="https://www.facebook.com/nguyentrungdung11346/" class="social-icon facebook" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://discord.gg/tB374as8JA" class="social-icon discord" title="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Audio Player -->
+    <div class="custom-audio-player">
+        <img id="audio-cover" src="assets/images/song1.gif" alt="hopthuthoaiso1" class="audio-cover">
+        <div class="audio-info">
+            <span class="audio-title" id="audio-title">Plage <span class="jp">- Matsuro</span></span>
+            <audio id="audio" src="assets/music/song1.mp3"></audio>
+            <div class="audio-progress">
+                <span id="audio-current">0:00</span>
+                <input type="range" id="audio-seek" value="0" min="0" max="100" step="1">
+                <span id="audio-duration">0:00</span>
+            </div>
+            <div class="audio-controls">
+                <button id="audio-prev"><i class="fas fa-backward"></i></button>
+                <button id="audio-play"><i class="fas fa-pause"></i></button>
+                <button id="audio-next"><i class="fas fa-forward"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
